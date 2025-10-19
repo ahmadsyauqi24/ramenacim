@@ -1,0 +1,318 @@
+/* =============================
+   FONT IMPORT
+============================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sawarabi+Mincho&display=swap');
+
+/* =============================
+   RESET DASAR
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #000;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* =============================
+   NAVBAR
+============================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.wrapper {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === LOGO === */
+.logo a {
+  font-family: 'Sawarabi Mincho', serif;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #b33322, #ff7043);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.logo a:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(217, 74, 42, 0.6);
+}
+
+/* === MENU === */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu ul li a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #ff7043;
+}
+
+.menu ul li a.active {
+  color: #ff7043;
+  font-weight: 600;
+  border-bottom: 2px solid #ff7043;
+  padding-bottom: 2px;
+}
+
+.menu ul li a.active:hover {
+  color: #ff7043;
+}
+
+/* === HAMBURGER === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* === TOMBOL SIGN UP === */
+.tbl-biru {
+  background: linear-gradient(90deg, #b33322, #ff7043);
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: #fff5e1;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(179, 51, 34, 0.3);
+}
+
+.tbl-biru:hover {
+  background: linear-gradient(90deg, #d94a2a, #ff9f68);
+  transform: scale(1.07);
+  box-shadow: 0 6px 12px rgba(217, 74, 42, 0.4);
+}
+
+/* =============================
+   SECTION UMUM
+============================= */
+section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.section-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+section h1, section h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* =============================
+   STORE / MENU SECTION
+============================= */
+#store {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #fff5e1, #ffe0b3);
+  color: #3b2e2a;
+}
+
+#store h2 {
+  font-size: 2.2em;
+  color: #b33322;
+  margin-bottom: 10px;
+}
+
+#store p {
+  font-size: 1.1em;
+  color: #5b4a46;
+  margin-bottom: 40px;
+}
+
+/* === PRODUK GRID === */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.product-card {
+  background: #fff8ef;
+  border-radius: 15px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 112, 67, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.product-card:hover::before {
+  left: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(179, 51, 34, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  font-size: 1.4em;
+  color: #b33322;
+  margin: 15px 0 10px;
+  font-weight: 700;
+}
+
+.product-card .description {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.product-card .price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #5b4a46;
+  margin-bottom: 20px;
+}
+
+.product-card .order-btn {
+  background: linear-gradient(135deg, #b33322, #d44a3a);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(179, 51, 34, 0.3);
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.product-card .order-btn:hover {
+  background: linear-gradient(135deg, #a02a1a, #c43e2e);
+  box-shadow: 0 6px 20px rgba(179, 51, 34, 0.5);
+  transform: scale(1.05);
+}
+
+.product-card .order-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(179, 51, 34, 0.4);
+}
+
+.product-card .order-btn:focus {
+  box-shadow: 0 0 0 3px rgba(179, 51, 34, 0.6), 0 4px 15px rgba(179, 51, 34, 0.3);
+}
+
+.product-card .order-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);}
